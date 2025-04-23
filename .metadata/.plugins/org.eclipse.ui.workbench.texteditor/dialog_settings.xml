@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="searchhistory">
+		<item value="&#x09;HAL_TIM_PWM_Start(&amp;htim3, TIM_CHANNEL_1);"/>
+		<item value="&amp;htim3, TIM_CHANNEL_1"/>
+		<item value="&amp;htim3, TIM_CHANNEL_3"/>
+		<item value="moon"/>
+	</list>
+	<list key="replacehistory">
+		<item value="&amp;htim3, TIM_CHANNEL_1"/>
+		<item value="&amp;htim1, TIM_CHANNEL_1"/>
+	</list>
+</section>

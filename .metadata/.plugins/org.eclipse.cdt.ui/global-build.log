@@ -1,0 +1,307 @@
+02:22:06 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32g0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g0xx_hal_msp.d" -MT"Core/Src/stm32g0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32g0xx_hal_msp.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21732	     92	   2300	  24124	   5e3c	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:29:48 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32g0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g0xx_hal_msp.d" -MT"Core/Src/stm32g0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32g0xx_hal_msp.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21600	     92	   2300	  23992	   5db8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:30:41 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21600	     92	   2300	  23992	   5db8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:38:07 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21624	     92	   2300	  24016	   5dd0	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:40:48 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21624	     92	   2300	  24016	   5dd0	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+02:41:16 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21624	     92	   2300	  24016	   5dd0	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+02:42:51 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21624	     92	   2300	  24016	   5dd0	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+02:46:17 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21588	     92	   2300	  23980	   5dac	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:48:50 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21632	     92	   2300	  24024	   5dd8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+02:50:04 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21632	     92	   2300	  24024	   5dd8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+23:27:41 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21632	     92	   2300	  24024	   5dd8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:32:05 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21632	     92	   2300	  24024	   5dd8	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:39:14 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:32: error: 'huart1' undeclared (first use in this function); did you mean 'huart2'?
+  127 |             HAL_UART_Transmit(&huart1, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+      |                                ^~~~~~
+      |                                huart2
+../Core/Src/main.c:127:32: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:127:62: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  127 |             HAL_UART_Transmit(&huart1, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+      |                                                              ^~~~~~
+../Core/Src/main.c:26:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   25 | #include "VCU_Interface.h"
+  +++ |+#include <string.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:127:62: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  127 |             HAL_UART_Transmit(&huart1, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+      |                                                              ^~~~~~
+../Core/Src/main.c:127:62: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:39:24 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:62: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  127 |             HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+      |                                                              ^~~~~~
+../Core/Src/main.c:26:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   25 | #include "VCU_Interface.h"
+  +++ |+#include <string.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:127:62: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  127 |             HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+      |                                                              ^~~~~~
+../Core/Src/main.c:127:62: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  22004	     92	   2300	  24396	   5f4c	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+23:39:50 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22004	     92	   2300	  24396	   5f4c	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:42:35 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:109:8: warning: unused variable 'tx_buffer' [-Wunused-variable]
+  109 |   char tx_buffer[64];  // Define this globally or at the top of main()
+      |        ^~~~~~~~~
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  19104	     12	   1972	  21088	   5260	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+23:42:44 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19104	     12	   1972	  21088	   5260	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:45:01 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  21996	     92	   2300	  24388	   5f44	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+23:45:17 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21996	     92	   2300	  24388	   5f44	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:46:27 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:18: error: unknown type name 'bool'
+  142 |           static bool motor_pwm_started = false;
+      |                  ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:46:33 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:18: error: unknown type name 'bool'
+  142 |           static bool motor_pwm_started = false;
+      |                  ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:47:15 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:18: error: unknown type name 'bool'
+  143 |           static bool motor_pwm_started = false;
+      |                  ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:47:22 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:26:10: fatal error: bool.h: No such file or directory
+   26 | #include <bool.h>
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:47:53 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  22060	     92	   2308	  24460	   5f8c	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 
+23:48:01 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-size  vcu_mk_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22060	     92	   2308	  24460	   5f8c	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+23:49:19 **** Incremental Build of configuration Debug for project vcu_mk_0 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list"   -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: vcu_mk_0.elf
+ 
+arm-none-eabi-size  vcu_mk_0.elf 
+arm-none-eabi-objdump -h -S vcu_mk_0.elf  > "vcu_mk_0.list"
+   text	   data	    bss	    dec	    hex	filename
+  22072	     92	   2308	  24472	   5f98	vcu_mk_0.elf
+Finished building: default.size.stdout
+ 
+Finished building: vcu_mk_0.list
+ 

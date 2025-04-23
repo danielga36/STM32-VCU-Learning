@@ -18,11 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "moon_riders.h"
+#include <string.h>
+#include <stdio.h>
+#include  <stdbool.h>
+#include "VCU_Interface.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,9 +35,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-// Define Simulink inputs and outputs
-//extern ExtU_moon_riders_T moon_riders_U;
-//extern ExtY_moon_riders_T moon_riders_Y;
 
 /* USER CODE END PD */
 
@@ -61,9 +60,9 @@ uint8_t right_LED_state = 1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
-static void MX_TIM3_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -90,7 +89,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  //moon_riders_initialize();
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -103,9 +102,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM1_Init();
-  MX_TIM3_Init();
   MX_ADC1_Init();
   MX_USART2_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   uint16_t pot_val=0;
   char tx_buffer[64];  // Define this globally or at the top of main()
@@ -121,38 +120,62 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	    HAL_ADC_Start(&hadc1);
-	    HAL_ADC_PollForConversion(&hadc1, 1);
-	    pot_val = HAL_ADC_GetValue(&hadc1);
 
-	    // Format the ADC value into the buffer
-	    snprintf(tx_buffer, sizeof(tx_buffer), "ADC Value: %u\r\n", pot_val);
+	  //	    if (HAL_GPIO_ReadPin(forward_GPIO_Port, forward_Pin) == GPIO_PIN_RESET) {
+	  //	        HAL_Delay(10);  // Debounce
+	  //	        if (HAL_GPIO_ReadPin(forward_GPIO_Port, forward_Pin) == GPIO_PIN_RESET) {
+	  //	        	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	  //	        }
+	  //	    }
 
-	    // Read Left Button (Active Low)
-	    if (HAL_GPIO_ReadPin(button_left_GPIO_Port, button_left_Pin) == GPIO_PIN_RESET) {
-	        HAL_Delay(10);  // Debounce
-	        if (HAL_GPIO_ReadPin(button_left_GPIO_Port, button_left_Pin) == GPIO_PIN_RESET) {
-	            HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);  // Left LED ON
-	            HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);   // Right LED OFF
-	        }
-	    }
+	  //	    if (HAL_GPIO_ReadPin(reverse_GPIO_Port, reverse_Pin) == GPIO_PIN_RESET) {
+	  //
+	  //	    }
 
-	    // Read Right Button (Active Low)
-	    else if (HAL_GPIO_ReadPin(button_right_GPIO_Port, button_right_Pin) == GPIO_PIN_RESET) {
-	        HAL_Delay(10);  // Debounce
-	        if (HAL_GPIO_ReadPin(button_right_GPIO_Port, button_right_Pin) == GPIO_PIN_RESET) {
-	            HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);  // Right LED ON
-	            HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);   // Left LED OFF
-	        }
-	    }
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	  // 1. ADC & Motor PWM
+	  HAL_ADC_Start(&hadc1);
+	  HAL_ADC_PollForConversion(&hadc1, 1);
+	  pot_val = HAL_ADC_GetValue(&hadc1);
 
-	    // No Button Pressed – Turn Both OFF
-	    else {
-	        HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
-	        HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-	    }
+	  uint32_t pwm_val = (pot_val * (__HAL_TIM_GET_AUTORELOAD(&htim3))) / 4095;
+	  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, pwm_val);
 
-	    HAL_Delay(100);  // 100ms scheduler-like pacing
+	  // Start motor PWM once
+	  static bool motor_pwm_started = false;
+	  if (!motor_pwm_started) {
+	      HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	      motor_pwm_started = true;
+	  }
+
+	  // 2. UART Debug
+	  snprintf(tx_buffer, sizeof(tx_buffer), "ADC Value: %u\r\n", pot_val);
+	  HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, strlen(tx_buffer), HAL_MAX_DELAY);
+
+	  // 3. Button Logic (LED control)
+	  if (HAL_GPIO_ReadPin(button_left_GPIO_Port, button_left_Pin) == GPIO_PIN_RESET) {
+	      HAL_Delay(10);
+	      if (HAL_GPIO_ReadPin(button_left_GPIO_Port, button_left_Pin) == GPIO_PIN_RESET) {
+	          HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);  // Left LED ON
+	          HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);   // Right LED OFF
+	          while (HAL_GPIO_ReadPin(button_left_GPIO_Port, button_left_Pin) == GPIO_PIN_RESET);
+	      }
+	  }
+	  else if (HAL_GPIO_ReadPin(button_right_GPIO_Port, button_right_Pin) == GPIO_PIN_RESET) {
+	      HAL_Delay(10);
+	      if (HAL_GPIO_ReadPin(button_right_GPIO_Port, button_right_Pin) == GPIO_PIN_RESET) {
+	          HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);  // Right LED ON
+	          HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);   // Left LED OFF
+	          while (HAL_GPIO_ReadPin(button_right_GPIO_Port, button_right_Pin) == GPIO_PIN_RESET);
+	      }
+	  }
+	  else {
+	      HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+	      HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+	  }
+
+	  HAL_Delay(100);
+
   }
   /* USER CODE END 3 */
 }
@@ -268,6 +291,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 0 */
 
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
@@ -282,6 +306,15 @@ static void MX_TIM1_Init(void)
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
   {
     Error_Handler();
@@ -300,6 +333,10 @@ static void MX_TIM1_Init(void)
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -370,6 +407,7 @@ static void MX_TIM3_Init(void)
   {
     Error_Handler();
   }
+  __HAL_TIM_DISABLE_OCxPRELOAD(&htim3, TIM_CHANNEL_1);
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
@@ -441,6 +479,12 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pins : forward_Pin reverse_Pin */
+  GPIO_InitStruct.Pin = forward_Pin|reverse_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : button_right_Pin */
   GPIO_InitStruct.Pin = button_right_Pin;

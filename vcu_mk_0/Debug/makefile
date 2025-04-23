@@ -60,8 +60,8 @@ all: main-build
 main-build: vcu_mk_0.elf secondary-outputs
 
 # Tool invocations
-vcu_mk_0.elf vcu_mk_0.map: $(OBJS) $(USER_OBJS) C:\Users\Pheonix\Documents\stm32_intern\vcu_mk_0\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\Pheonix\Documents\stm32_intern\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+vcu_mk_0.elf vcu_mk_0.map: $(OBJS) $(USER_OBJS) T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "vcu_mk_0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"T:\PROJECTS_LOCAL\STM32-VCU-Learning\vcu_mk_0\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vcu_mk_0.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
